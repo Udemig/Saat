@@ -1,0 +1,92 @@
+/* heryer icin gecerli*/
+*::after, *::before{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* body ile genel ozellikler */
+body{
+    background: linear-gradient(to right, rgba(200,100,50,0.7), rgba(50,100,200,0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* saat ayarlari genel*/
+.clock{
+    background-color: rgba(100, 200, 100, 0.7);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid bisque;
+    position: relative;
+}
+
+.clock .number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.clock .number1{--rotation: 30deg;}
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    background-color: yellow;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10x;
+    transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: yellow;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: violet;
+}
+
+.clock .hand.minute{
+    width: 7px;
+    background-color: turquoise;
+    height: 40%;
+}
+
+.clock .hand.hour{
+    width: 10px;
+    background-color: tomato;
+    height: 35%;
+}
